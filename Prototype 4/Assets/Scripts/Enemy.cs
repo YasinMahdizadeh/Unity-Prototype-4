@@ -20,5 +20,10 @@ public class Enemy : MonoBehaviour
     {
         Vector3 forceVector = (player.transform.position - transform.position).normalized;
         enemyRb.AddForce( forceVector * speed);
+
+        if ( transform.position.y < -10)
+        {
+            Destroy(gameObject);
+        }
     }
 }
